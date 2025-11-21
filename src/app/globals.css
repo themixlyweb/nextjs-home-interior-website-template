@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64.9%;
+    --radius: 0.75rem;
+
+    /* Fluid type scale */
+    --fluid-xs: clamp(0.75rem, 0.4vw + 0.6rem, 0.9rem);
+    --fluid-sm: clamp(0.9rem, 0.45vw + 0.75rem, 1rem);
+    --fluid-base: clamp(1rem, 0.5vw + 0.85rem, 1.125rem);
+    --fluid-lg: clamp(1.25rem, 0.8vw + 1rem, 1.75rem);
+    --fluid-xl: clamp(1.5rem, 1vw + 1.2rem, 2rem);
+    --fluid-2xl: clamp(2rem, 1.5vw + 1.5rem, 2.5rem);
+    --fluid-3xl: clamp(2.5rem, 2vw + 1.8rem, 3.5rem);
+    --fluid-4xl: clamp(3rem, 2.5vw + 2rem, 4.5rem);
+
+    --fluid-gap: clamp(1rem, 1vw + 0.5rem, 2rem);
+    --fluid-radius: clamp(0.5rem, 0.5vw + 0.25rem, 1rem);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-size: var(--fluid-base);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-foreground;
+  }
+
+  h1 { font-size: var(--fluid-4xl); }
+  h2 { font-size: var(--fluid-3xl); }
+  h3 { font-size: var(--fluid-2xl); }
+  h4 { font-size: var(--fluid-xl); }
+  p { font-size: var(--fluid-base); @apply text-muted-foreground; }
+  img { @apply max-w-full h-auto; border-radius: var(--fluid-radius); }
+  section { padding-top: var(--fluid-gap); padding-bottom: var(--fluid-gap); }
+}
+
+@layer utilities {
+  /* Custom rounded-fluid utility */
+  .rounded-fluid {
+    border-radius: var(--fluid-radius);
+  }
+}
+
+/* globals.css */
+@layer base {
+  h1 {
+    @apply font-bold text-4xl md:text-5xl text-[#ffff];
+  }
+  h2 {
+    @apply font-bold text-3xl md:text-4xl text-[#2f3d46];
+  }
+  h3 {
+    @apply font-bold text-xl md:text-2xl text-[#2f3d46];
+  }
+  p {
+    @apply text-sm  md:text-lg text-[#2f3d46]/90;
+  }
+  button {
+    @apply text-sm  md:text-lg;
+  }
+}
